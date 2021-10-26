@@ -282,6 +282,7 @@ body {
   height: 100vh;
   display: flex;
   align-items: center;
+  padding-top: 2vw;
 }
 
 /* TOP PAGE */
@@ -356,6 +357,8 @@ body {
   justify-content: center;
   align-items: center;
 }
+.about-container-container {
+}
 
 #about .container {
   background: linear-gradient(
@@ -380,6 +383,7 @@ body {
 #about .content h2,
 #about .content p {
   color: #fff;
+  font-size: 1.2vw;
 }
 
 #about .content h4 {
