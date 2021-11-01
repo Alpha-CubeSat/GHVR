@@ -1,4 +1,4 @@
-import React from 'react';
+import React, {Component} from 'react';
 import {
   AppRegistry,
   StyleSheet,
@@ -10,6 +10,10 @@ import {
   staticResourceURL,
   NativeModules,
 } from 'react-360';
+import Unity, { UnityContext } from "react-unity-webgl";
+import document from 'react-native'
+
+
 
 import Entity from 'Entity';
 
@@ -74,6 +78,8 @@ export default class Gold extends React.Component {
     lakeName = "Finger Lakes"
   }
 */
+
+//adding webgl: https://stackoverflow.com/questions/50819780/how-can-i-place-unity-webgl-in-my-react-native-app
   render() {
     return (
       <View>
@@ -90,6 +96,15 @@ export default class Gold extends React.Component {
           <Text style={this.state.zoom %2 == 0 ? styles.zoomText : styles.noZoomText}>
             {this._checkZoom()}
           </Text>
+          <View>
+           <Unity
+             width="500px"
+             height="350px"
+             onProgress={ this.onProgress }
+             src="./Build/WEBGLBuilds.json"
+             loader="./Build/UnityLoader.js"
+           />
+          </View>
         </View></View>
 
 
